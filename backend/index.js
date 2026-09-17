@@ -1,9 +1,13 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+
+
 dotenv.config();
+
 const PORT = process.env.BACKEND_PORT;
 const app = express();
+
 app.use(cors());
 app.use(express.json());
 
@@ -13,6 +17,6 @@ app.get("/",(req,res) => {
     .send("<h>Welcome to estful API for Product Managemant App<h>");
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0",() => {
     console.log(`Server is running on: http://localhost:${PORT}`);
 });
